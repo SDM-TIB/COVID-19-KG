@@ -1,1 +1,1 @@
-# CORONA19
+# COVID-19 KG
