@@ -1,0 +1,121 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rev: <http://purl.org/stuff/rev#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix corvid-19: <http://corvid-19.tib.eu/vocab/> .
+
+<#Publication>
+	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF_Mappings/metadata.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://corvid-19.tib.eu/Publication/{cord_uid}";
+		rr:class corvid-19:Publication
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:sha;
+		rr:objectMap [
+			rr:template: "http://corvid-19.tib.eu/Publication/{sha}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:source;
+		rr:objectMap [ 
+			rml:reference "source_x" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:title;
+		rr:objectMap [ 
+			rml:reference "title" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:doi;
+		rr:objectMap [ 
+			rr:template: "http://corvid-19.tib.eu/Publication/{doi}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:pmcid;
+		rr:objectMap [ 
+			rr:template: "http://corvid-19.tib.eu/Publication/{pmcid}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:pubmedID;
+		rr:objectMap [ 
+			rr:template: "http://corvid-19.tib.eu/Publication/{pubmed_id}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:license;
+		rr:objectMap [ 
+			rml:reference "license" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:abstract;
+		rr:objectMap [ 
+			rml:reference "abstract" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:year;
+		rr:objectMap [ 
+			rml:reference "publish_time"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:journal;
+		rr:objectMap [ 
+			rml:reference "journal" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:author;
+		rr:objectMap [ 
+			rml:reference "authors" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:microsoftacadpaperid;
+		rr:objectMap [ 
+			rml:reference "Microsoft Academic Paper ID" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:WHOCovidence;
+		rr:objectMap [ 
+			rml:reference "WHO #Covidence" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:has_pdf_parse;
+		rr:objectMap [ 
+			rml:reference "has_pdf_parse" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:has_pmc_xml_parse;
+		rr:objectMap [ 
+			rml:reference "has_pmc_xml_parse" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:full_text_file;
+		rr:objectMap [ 
+			rml:reference "full_text_file" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate corvid-19:url;
+		rr:objectMap [ 
+			rml:reference "url" 
+		]
+	].	
+
