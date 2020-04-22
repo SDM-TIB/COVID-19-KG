@@ -10,7 +10,7 @@
 @prefix corvid-19: <http://corvid-19.tib.eu/vocab/> .
 
 <#Effect>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF_Mappings/drugs_interaction.csv";
+	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/drugs_interaction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -25,7 +25,7 @@
 	].
 
 <#Impact>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF_Mappings/drugs_interaction.csv";
+	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/drugs_interaction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -40,7 +40,7 @@
 	].	
 
 <#DrugDrugInteraction>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF_Mappings/drugs_interaction.csv";
+	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/drugs_interaction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -80,7 +80,7 @@
 	rr:predicateObjectMap [
 		rr:predicate corvid-19:hasImpact;
 		rr:objectMap [
-			rr:template "hhttp://corvid-19.tib.eu/Impact/{property}"
+			rr:template "http://corvid-19.tib.eu/Impact/{property}"
 		]
 	];	
 	rr:predicateObjectMap [

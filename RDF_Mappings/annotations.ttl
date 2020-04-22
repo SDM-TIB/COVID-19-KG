@@ -9,11 +9,11 @@
 @prefix corvid-19: <http://corvid-19.tib.eu/vocab/> .
 
 <#Annotation>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF_Mappings/annotations.csv";
+	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/corvid_data/all_annotations.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://corvid-19.tib.eu/vocab/{cord_uid}_has_{CUI}";
+		rr:template "http://corvid-19.tib.eu/vocab/{cord_uid}_has_{CUI_ID}";
 		rr:class corvid-19:Annotation
 	];
 	rr:predicateObjectMap [
@@ -25,6 +25,6 @@
 	rr:predicateObjectMap [
 		rr:predicate corvid-19:hasAnnotation;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/vocab/{CUI}"
+			rr:template "http://corvid-19.tib.eu/vocab/{CUI_ID}"
 		]
 	].	

@@ -9,7 +9,7 @@
 @prefix corvid-19: <http://corvid-19.tib.eu/vocab/> .
 
 <#DrugToxicity>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF_Mappings/drugs_toxicities.csv";
+	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/drugs_toxicities.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

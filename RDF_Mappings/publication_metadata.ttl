@@ -9,7 +9,7 @@
 @prefix corvid-19: <http://corvid-19.tib.eu/vocab/> .
 
 <#Publication>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF_Mappings/metadata.csv";
+	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/corvid_data/metadata.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
