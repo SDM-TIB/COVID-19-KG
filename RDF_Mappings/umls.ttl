@@ -8,25 +8,25 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix base: <http://tib.de/ontario/mapping#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix corvid-19: <http://corvid-19.tib.eu/vocab/> .
+@prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
 <#CUI_UMLS>
 	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/MultiLang_with_covid.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://corvid-19.tib.eu/vocab/{CUI_ID}";
-		rr:class corvid-19:CUI_UMLS
+		rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}";
+		rr:class covid-19:CUI_UMLS
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:label;
+		rr:predicate covid-19:label;
 		rr:objectMap [ 
 			rml:reference "Label" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:provenance;
+		rr:predicate covid-19:provenance;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/SourceName/UMLS"
+			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
 		]
 	].

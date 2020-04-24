@@ -7,68 +7,68 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix corvid-19: <http://corvid-19.tib.eu/vocab/> .
+@prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
 <#Concept>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/corvid_data/diseases_syndromes.csv";
+	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/covid_data/diseases_syndromes.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://corvid-19.tib.eu/vocab/{CUI_ID}";
-		rr:class corvid-19:Concept
+		rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}";
+		rr:class covid-19:Concept
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:concept_Label;
+		rr:predicate covid-19:concept_Label;
 		rr:objectMap [ 
 			rml:reference "Concept" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:provenance;
+		rr:predicate covid-19:provenance;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/SourceName/UMLS"
+			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
 		]
 	].
 
 <#Substance>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/corvid_data/substances.csv";
+	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/covid_data/substances.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://corvid-19.tib.eu/vocab/{CUI_ID}";
-		rr:class corvid-19:Substance
+		rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}";
+		rr:class covid-19:Substance
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:substance_Label;
+		rr:predicate covid-19:substance_Label;
 		rr:objectMap [ 
 			rml:reference "Substance" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:provenance;
+		rr:predicate covid-19:provenance;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/SourceName/UMLS"
+			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
 		]
 	].
 
 <#Covid_terms>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/corvid_data/covid_terms_ann.csv";
+	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/covid_data/covid_terms_ann.csv";
 	rml:referenceFormulation ql:CSV 
 	];
 	
 	rr:subjectMap [
-		rr:template "http://corvid-19.tib.eu/vocab/{covid_id}";
-		rr:class corvid-19:Covid_terms
+		rr:template "http://covid-19.tib.eu/vocab/{covid_id}";
+		rr:class covid-19:Covid_terms
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:covid_term;
+		rr:predicate covid-19:covid_term;
 		rr:objectMap [ 
 			rml:reference "covid_term" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:provenance;
+		rr:predicate covid-19:provenance;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/SourceName/UMLS"
+			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
 		]
 	].

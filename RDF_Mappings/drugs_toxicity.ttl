@@ -6,39 +6,39 @@
 @prefix rev: <http://purl.org/stuff/rev#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix corvid-19: <http://corvid-19.tib.eu/vocab/> .
+@prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
 <#DrugToxicity>
 	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/drugs_toxicities.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://corvid-19.tib.eu/vocab/{CUI_ID}_hasToxicity_{toxicity_CUI}";
-		rr:class corvid-19:DrugToxicity
+		rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}_hasToxicity_{toxicity_CUI}";
+		rr:class covid-19:DrugToxicity
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:drugBankID;
+		rr:predicate covid-19:drugBankID;
 		rr:objectMap [
-			rml:reference "http://corvid-19.tib.eu/vocab/{drug_id}";
+			rr:template "http://covid-19.tib.eu/vocab/{drug_id}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:toxicity_label;
+		rr:predicate covid-19:toxicity_label;
 		rr:objectMap [
 			rml:reference "toxicity_Label";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:hasToxicityCUI;
+		rr:predicate covid-19:hasToxicityCUI;
 		rr:objectMap [
-			rml:reference "http://corvid-19.tib.eu/vocab/{toxicity_CUI}";
+			rr:template "http://covid-19.tib.eu/vocab/{toxicity_CUI}";
 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:hasDrugCUI;
+		rr:predicate covid-19:hasDrugCUI;
 		rr:objectMap [
-			rml:reference "http://corvid-19.tib.eu/vocab/{CUI_ID}";
+			rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}";
 		]
 	].
 

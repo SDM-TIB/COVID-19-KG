@@ -7,37 +7,37 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix corvid-19: <http://corvid-19.tib.eu/vocab/> .
+@prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
 <#ICD_10>
 	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/icd10_cui_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://corvid-19.tib.eu/vocab/{CUI_ID}";
-		rr:class corvid-19:ICD_10
+		rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}";
+		rr:class covid-19:ICD_10
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:ICD10_meaning;
+		rr:predicate covid-19:ICD10_meaning;
 		rr:objectMap [ 
-			rml:reference "http://corvid-19.tib.eu/vocab/{ICD10_meaning}"; 
+			rr:template "http://covid-19.tib.eu/vocab/{ICD10_meaning}"; 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:ICD10_selectable;
+		rr:predicate covid-19:ICD10_selectable;
 		rr:objectMap [ 
 			rml:reference "ICD10_selectable" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:ICD10_Coding;
+		rr:predicate covid-19:ICD10_Coding;
 		rr:objectMap [ 
-			rml:reference "http://corvid-19.tib.eu/vocab/{ICD10_Coding}"; 
+			rr:template "http://covid-19.tib.eu/vocab/{ICD10_Coding}"; 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:provenance;
+		rr:predicate covid-19:provenance;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/SourceName/UMLS"
+			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
 		]
 	].

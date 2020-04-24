@@ -7,18 +7,18 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix corvid-19: <http://corvid-19.tib.eu/vocab/> .
+@prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
 <#Effect>
 	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/drugs_interaction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://corvid-19.tib.eu/Effect/{effect}";
-		rr:class corvid-19:Effect
+		rr:template "http://covid-19.tib.eu/Effect/{effect}";
+		rr:class covid-19:Effect
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:effectLabel;
+		rr:predicate covid-19:effectLabel;
 		rr:objectMap [
 			rml:reference "effect"
 		]
@@ -29,11 +29,11 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://corvid-19.tib.eu/Impact/{property}";
-		rr:class corvid-19:Impact
+		rr:template "http://covid-19.tib.eu/Impact/{property}";
+		rr:class covid-19:Impact
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:impactLabel;
+		rr:predicate covid-19:impactLabel;
 		rr:objectMap [ 
 			rml:reference "property" 
 		]
@@ -44,49 +44,49 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://corvid-19.tib.eu/vocab/{CUI_1}_interactsWith_{CUI_2}";
-		rr:class corvid-19:DrugDrugInteraction
+		rr:template "http://covid-19.tib.eu/vocab/{CUI_1}_interactsWith_{CUI_2}";
+		rr:class covid-19:DrugDrugInteraction
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:hasDrug1CUI;
+		rr:predicate covid-19:hasDrug1CUI;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/vocab/{CUI_1}";
+			rr:template "http://covid-19.tib.eu/vocab/{CUI_1}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:hasDrug2CUI;
+		rr:predicate covid-19:hasDrug2CUI;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/vocab/{CUI_2}";
+			rr:template "http://covid-19.tib.eu/vocab/{CUI_2}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:affects;
+		rr:predicate covid-19:affects;
 		rr:objectMap [ 
-			rr:template "http://corvid-19.tib.eu/vocab/{Drug1}" 
+			rr:template "http://covid-19.tib.eu/vocab/{Drug1}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:isAffected;
+		rr:predicate covid-19:isAffected;
 		rr:objectMap [ 
-			rr:template "http://corvid-19.tib.eu/vocab/{Drug2}" 
+			rr:template "http://covid-19.tib.eu/vocab/{Drug2}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:hasEffect;
+		rr:predicate covid-19:hasEffect;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/Effect/{effect}"
+			rr:template "http://covid-19.tib.eu/Effect/{effect}"
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:hasImpact;
+		rr:predicate covid-19:hasImpact;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/Impact/{property}"
+			rr:template "http://covid-19.tib.eu/Impact/{property}"
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:provenance;
+		rr:predicate covid-19:provenance;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/SourceName/UMLS"
+			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
 		]
 	].
 

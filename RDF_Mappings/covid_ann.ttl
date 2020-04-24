@@ -6,25 +6,25 @@
 @prefix rev: <http://purl.org/stuff/rev#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix corvid-19: <http://corvid-19.tib.eu/vocab/> .
+@prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
 <#COVID_Annotation>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/corvid_data/all_covid_ann.csv";
+	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/covid_data/all_covid_ann.csv";
 	rml:referenceFormulation ql:CSV 
 	];
 	rr:subjectMap [
-		rr:template "http://corvid-19.tib.eu/vocab/{cord_uid}_has_{covid_id}";
-		rr:class corvid-19:COVID_Annotation
+		rr:template "http://covid-19.tib.eu/vocab/{cord_uid}_has_{covid_id}";
+		rr:class covid-19:COVID_Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:covid_annotates;
+		rr:predicate covid-19:annotates;
 		rr:objectMap [ 
-			rr:template "http://corvid-19.tib.eu/Publication/{cord_uid}"
+			rr:template "http://covid-19.tib.eu/Publication/{cord_uid}"
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate corvid-19:has_covid_Annotation;
+		rr:predicate covid-19:hasAnnotation;
 		rr:objectMap [
-			rr:template "http://corvid-19.tib.eu/vocab/{covid_id}"
+			rr:template "http://covid-19.tib.eu/vocab/{covid_id}"
 		]
 	].	
