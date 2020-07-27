@@ -83,33 +83,33 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:microsoftacadpaperid;
+		rr:predicate covid-19:WHOCovidenceId;
 		rr:objectMap [ 
-			rml:reference "Microsoft Academic Paper ID" 
+			rml:reference "who_covidence_id" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:WHOCovidence;
+		rr:predicate covid-19:MagId;
 		rr:objectMap [ 
-			rml:reference "WHO #Covidence" 
+			rml:reference "mag_id" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:has_pdf_parse;
+		rr:predicate covid-19:ArxivId;
 		rr:objectMap [ 
-			rml:reference "has_pdf_parse" 
+			rml:reference "arxiv_id" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:has_pmc_xml_parse;
+		rr:predicate covid-19:pdf_json_files;
 		rr:objectMap [ 
-			rml:reference "has_pmc_xml_parse" 
+			rml:reference "pdf_json_files" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:full_text_file;
+		rr:predicate covid-19:pmc_json_files;
 		rr:objectMap [ 
-			rml:reference "full_text_file" 
+			rml:reference "pmc_json_files" 
 		]
 	];
 	rr:predicateObjectMap [

@@ -13,7 +13,7 @@
 	rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://covid-19.tib.eu/vocab/{cord_uid}_has_{CUI_ID}";
+		rr:template "http://covid-19.tib.eu/vocab/{cord_uid}_has_{cui_id}";
 		rr:class covid-19:Annotation
 	];
 	rr:predicateObjectMap [
@@ -25,6 +25,6 @@
 	rr:predicateObjectMap [
 		rr:predicate covid-19:hasAnnotation;
 		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}"
+			rr:template "http://covid-19.tib.eu/vocab/{cui_id}"
 		]
 	].	
