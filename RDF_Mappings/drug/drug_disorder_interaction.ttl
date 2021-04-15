@@ -11,7 +11,7 @@
 @prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
 <#DrugDisorderInteraction>
-	rml:logicalSource [ rml:source "/data/drugs_indications.csv";
+	rml:logicalSource [ rml:source "/data/drug/drugs_indications.csv";
 	rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
