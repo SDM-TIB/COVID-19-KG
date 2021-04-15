@@ -420,6 +420,33 @@ xsd:date rdf:type rdfs:Datatype .
                                         rdfs:label "arxiv_id"@en .
 
 
+###  http://covid-19.tib.eu/vocab/pubmed_id
+<http://covid-19.tib.eu/vocab/pubmed_id> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                        rdfs:domain <http://covid-19.tib.eu/vocab/Publication> ;
+                                        rdfs:range rdfs:Literal ;
+                                        rdfs:comment "Publications"^^xsd:string ;
+                                        rdfs:label "pubmed_id"@en .
+
+
+###  http://covid-19.tib.eu/vocab/sha_id
+<http://covid-19.tib.eu/vocab/sha_id> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                        rdfs:domain <http://covid-19.tib.eu/vocab/Publication> ;
+                                        rdfs:range rdfs:Literal ;
+                                        rdfs:comment "Publications identifier"^^xsd:string ;
+                                        rdfs:label "sha_id"@en .
+
+
+###  http://covid-19.tib.eu/vocab/pmcid
+<http://covid-19.tib.eu/vocab/pmcid> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                        rdfs:domain <http://covid-19.tib.eu/vocab/Publication> ;
+                                        rdfs:range rdfs:Literal ;
+                                        rdfs:comment "Publications identifier"^^xsd:string ;
+                                        rdfs:label "pmcid"@en .
+
+
 ###  http://covid-19.tib.eu/vocab/authorName
 <http://covid-19.tib.eu/vocab/authorName> rdf:type owl:DatatypeProperty ;
                                           rdfs:domain <http://covid-19.tib.eu/vocab/Author> ;
