@@ -3,16 +3,28 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rev: <http://purl.org/stuff/rev#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix base: <http://tib.de/ontario/mapping#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
-<#UMLS>
-	rml:logicalSource [ rml:source "/data/drug/CUIs_oneLabel.csv";
+<Drug>
+	rml:logicalSource [ rml:source "/data/drug/CUI_DrugBank.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://covid-19.tib.eu/Drug/{DrugBankID}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate covid-19:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <Annotation>
+		]
+	].
+
+<Annotation>
+	rml:logicalSource [ rml:source "/data/drug/CUI_DrugBank.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -20,14 +32,14 @@
 		rr:class covid-19:Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:annlabel;
+		rr:predicate covid-19:annID;
 		rr:objectMap [ 
-			rml:reference "Label"; 
+			rml:reference "CUI_ID" 
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate prov:hadPrimarySource;
 		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/SourceName/UMLS";
+			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
 		]
 	].

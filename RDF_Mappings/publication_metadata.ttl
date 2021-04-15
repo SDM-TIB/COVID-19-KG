@@ -6,10 +6,11 @@
 @prefix rev: <http://purl.org/stuff/rev#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
 <#Publication>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/covid_data/metadata.csv";
+	rml:logicalSource [ rml:source "/data/pub/metadata.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -17,7 +18,7 @@
 		rr:class covid-19:Publication
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:sha;
+		rr:predicate covid-19:sha_id;
 		rr:objectMap [
 			rr:template: "http://covid-19.tib.eu/Publication/{sha}" 
 		]
@@ -47,7 +48,7 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:pubmedID;
+		rr:predicate covid-19:pubmed_id;
 		rr:objectMap [ 
 			rr:template: "http://covid-19.tib.eu/Publication/{pubmed_id}"
 		]
@@ -77,25 +78,13 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:author;
-		rr:objectMap [ 
-			rml:reference "authors" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate covid-19:WHOCovidenceId;
+		rr:predicate covid-19:who_covidence_id;
 		rr:objectMap [ 
 			rml:reference "who_covidence_id" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:MagId;
-		rr:objectMap [ 
-			rml:reference "mag_id" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate covid-19:ArxivId;
+		rr:predicate covid-19:arxiv_id;
 		rr:objectMap [ 
 			rml:reference "arxiv_id" 
 		]
@@ -113,7 +102,13 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:url;
+		rr:predicate covid-19:publication_isRelatedTo_Disease;
+		rr:objectMap [ 
+			rr:template: "http://covid-19.tib.eu/Disorder/COVID-19"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate covid-19:exteralLink;
 		rr:objectMap [ 
 			rml:reference "url" 
 		]

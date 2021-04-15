@@ -3,42 +3,30 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rev: <http://purl.org/stuff/rev#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
-<#DrugDrugPrediction>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/drugs_predictions_proc.csv";
-	rml:referenceFormulation ql:CSV 
-	];
+<DrugDrugPrediction>
+	rml:logicalSource [ rml:source "/data/drug_predictions/wp4_drug_drug_interactions_otherDiseases.csv";
+						rml:referenceFormulation ql:CSV 
+						];
 	rr:subjectMap [
-		rr:template "http://covid-19.tib.eu/vocab/{CUI_1}_interactsWith_{CUI_2}";
+		rr:template "http://covid-19.tib.eu/DrugDrugPrediction/{Drug1}_interactsWith_{Drug2}";
 		rr:class covid-19:DrugDrugPrediction
-	];
-	rr:predicateObjectMap [
-		rr:predicate covid-19:hasDrug1CUI;
-		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/vocab/{CUI_1}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate covid-19:hasDrug2CUI;
-		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/vocab/{CUI_2}";
-		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate covid-19:interactor1;
 		rr:objectMap [ 
-			rr:template "http://covid-19.tib.eu/vocab/{DrugBank_ID_1}" 
+			rr:template "http://covid-19.tib.eu/Drug/{Drug1}" 
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate covid-19:interactor2;
 		rr:objectMap [ 
-			rr:template "http://covid-19.tib.eu/vocab/{DrugBank_ID_2}" 
+			rr:template "http://covid-19.tib.eu/Drug/{Drug2}" 
 		]
 	];
 	rr:predicateObjectMap [
@@ -46,16 +34,17 @@
 		rr:objectMap [ 
 			rml:reference "Probability" 
 		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate prov:hadPrimarySource;
+		rr:objectMap [
+			rr:template "http://covid-19.tib.eu/SourceName/PubMed"
+		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate covid-19:predictionMethod;
 		rr:objectMap [ 
 			rr:constant "Literature Predictions" 
 		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate covid-19:provenance;
-		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
-		]
-	].
+	].	
+
