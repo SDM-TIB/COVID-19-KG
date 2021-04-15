@@ -7,49 +7,57 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
-<#DrugIndication>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/drugs_indications.csv";
+<#Drug>
+	rml:logicalSource [ rml:source "/data/drug/drugs_dbpedia.csv";
 	rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}_isPrescribedFor_{indication_Id}";
-		rr:class covid-19:DrugIndication
+		rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}";
+		rr:class covid-19:Drug
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:drugLabel;
+		rr:predicate covid-19:DrugLabel;
 		rr:objectMap [
 			rml:reference "DrugName";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:drugId;
+		rr:predicate covid-19:DrugBankID;
 		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/vocab/{DrugId}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate covid-19:hasDrugCUI;
-		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/vocab/{CUI_Id}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate covid-19:hasIndicationCUI;
-		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/vocab/{indication_Id}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate covid-19:indication_Label;
-		rr:objectMap [
-			rml:reference "indication_name";
+			rr:template "http://covid-19.tib.eu/vocab/{DrugBankID}";
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [
-			rr:template "{Dbpedia_url}";
+			rr:template "{DBpediaURL}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate covid-19:externalLink;
+		rr:objectMap [
+			rr:template "https://www.drugbank.ca/drugs/{DrugBankID}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate owl:sameAs;
+		rr:objectMap [
+			rr:template "http://bio2rdf.org/drugbank:{DrugBankID}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate owl:sameAs;
+		rr:objectMap [
+			rr:template "http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugs/{DrugBankID}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:hadPrimarySource;
+		rr:objectMap [
+			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
 		]
 	].
+

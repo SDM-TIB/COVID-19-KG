@@ -7,37 +7,33 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
-<#ICD_10>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/icd10_cui_processed.csv";
-						rml:referenceFormulation ql:CSV 
+<#DrugDisorderInteraction>
+	rml:logicalSource [ rml:source "/data/drugs_indications.csv";
+	rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}";
-		rr:class covid-19:ICD_10
+		rr:template "http://covid-19.tib.eu/DrugDisorderInteraction/{DrugId}_isPrescribedFor_{indication_Id}";
+		rr:class covid-19:DrugDisorderInteraction
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:ICD10_meaning;
+		rr:predicate covid-19:interactor1;
 		rr:objectMap [ 
-			rr:template "http://covid-19.tib.eu/vocab/{ICD10_meaning}"; 
+			rr:template "http://covid-19.tib.eu/Annotation/{DrugId}"
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:ICD10_selectable;
+		rr:predicate covid-19:interactor2;
 		rr:objectMap [ 
-			rml:reference "ICD10_selectable" 
+			rr:template "http://covid-19.eu/Disorder/{indication_name}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:ICD10_Coding;
-		rr:objectMap [ 
-			rr:template "http://covid-19.tib.eu/vocab/{ICD10_Coding}"; 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate covid-19:provenance;
+		rr:predicate prov:hadPrimarySource;
 		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
+			rr:template "http://covid-19.tib.eu/SourceName/DrugBank"
 		]
-	].
+	].	
+

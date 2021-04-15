@@ -3,30 +3,35 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rev: <http://purl.org/stuff/rev#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix base: <http://tib.de/ontario/mapping#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix covid-19: <http://covid-19.tib.eu/vocab/> .
 
-<#CUI_UMLS>
-	rml:logicalSource [ rml:source "/home/anery/Desktop/Covid_Data/RDF/drugs_data/MultiLang_with_covid.csv";
+<DrugDrugInteraction>
+	rml:logicalSource [ rml:source "/data/drug/CRD.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}";
-		rr:class covid-19:CUI_UMLS
+		rr:template "http://covid-19.tib.eu/DrugDrugInteraction/{Drug1}_interactsWith_{Drug2}";
+		rr:class covid-19:DrugDrugInteraction
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:label;
+		rr:predicate covid-19:affects;
 		rr:objectMap [ 
-			rml:reference "Label" 
+			rr:template "http://covid-19.tib.eu/Drug/{Drug1}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:provenance;
+		rr:predicate covid-19:isAffected;
+		rr:objectMap [ 
+			rr:template "http://covid-19.tib.eu/Drug/{Drug2}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:hadPrimarySource;
 		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
+			rr:template "http://covid-19.tib.eu/SourceName/DrugBank/metabolized_by_the_same_CYP_enzyme"
 		]
 	].
