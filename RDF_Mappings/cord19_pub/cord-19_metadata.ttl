@@ -36,6 +36,12 @@
 		]
 	];
 	rr:predicateObjectMap [
+		rr:predicate covid-19:author;
+		rr:objectMap [ 
+			rml:reference "authors" 
+		]
+	];
+	rr:predicateObjectMap [
 		rr:predicate covid-19:doi;
 		rr:objectMap [ 
 			rr:template: "http://covid-19.tib.eu/Publication/{doi}"
@@ -108,7 +114,7 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:exteralLink;
+		rr:predicate covid-19:externalLink;
 		rr:objectMap [ 
 			rml:reference "url" 
 		]
