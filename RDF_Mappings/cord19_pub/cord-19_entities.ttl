@@ -44,7 +44,7 @@
 
 <SemanticObjectAnnotation>
 a rr:TriplesMap;
-	rml:logicalSource [ rml:source "/data/pub/CORD19_entities.csv";
+	rml:logicalSource [ rml:source "/data/pub/entities.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

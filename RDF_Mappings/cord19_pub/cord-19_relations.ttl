@@ -11,7 +11,7 @@
 
 <Relation>
 	a rr:TriplesMap;
-	rml:logicalSource [ rml:source "/data/pub/CORD19_relations.csv";
+	rml:logicalSource [ rml:source "/data/pub/relations.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -80,7 +80,7 @@
 
 <SemanticSubjectAnnotation>
 a rr:TriplesMap;
-	rml:logicalSource [ rml:source "/data/pub/CORD19_relations.csv";
+	rml:logicalSource [ rml:source "/data/pub/relations.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -108,7 +108,7 @@ a rr:TriplesMap;
 
 <GeneSubjectAnnotation>
 	a rr:TriplesMap;
-	rml:logicalSource [ rml:source "/data/pub/CORD19_relations.csv";
+	rml:logicalSource [ rml:source "/data/pub/relations.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -130,7 +130,7 @@ a rr:TriplesMap;
 
 <SemanticObjectAnnotation>
 	a rr:TriplesMap;
-	rml:logicalSource [ rml:source "/data/pub/CORD19_relations.csv";
+	rml:logicalSource [ rml:source "/data/pub/relations.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -158,7 +158,7 @@ a rr:TriplesMap;
 
 <GeneObjectAnnotation>
 	a rr:TriplesMap;
-	rml:logicalSource [ rml:source "/data/pub/CORD19_relations.csv";
+	rml:logicalSource [ rml:source "/data/pub/relations.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
