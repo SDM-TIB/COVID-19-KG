@@ -15,19 +15,13 @@
 	rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://covid-19.tib.eu/vocab/{CUI_ID}";
+		rr:template "http://covid-19.tib.eu/vocab/{DrugBankID}";
 		rr:class covid-19:Drug
 	];
 	rr:predicateObjectMap [
 		rr:predicate covid-19:DrugLabel;
 		rr:objectMap [
 			rml:reference "DrugName";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate covid-19:DrugBankID;
-		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/vocab/{DrugBankID}";
 		]
 	];
 	rr:predicateObjectMap [

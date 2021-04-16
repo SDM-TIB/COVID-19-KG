@@ -156,7 +156,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://covid-19.tib.eu/vocab/interactor1
 <http://covid-19.tib.eu/vocab/interactor1> rdf:type owl:ObjectProperty ;
                                            rdfs:domain <http://covid-19.tib.eu/vocab/Interaction> ;
-                                           rdfs:range <http://covid-19.tib.eu/vocab/Drug> ;
+                                           rdfs:range <http://covid-19.tib.eu/vocab/Concept> ;
                                            <http://purl.org/dc/terms/creator> <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/> ;
                                            <http://purl.org/dc/terms/modified> "2020-07-24"@en ;
                                            rdfs:comment "Relation which connects an interaction to the involved drug"@en ;
@@ -319,7 +319,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://covid-19.tib.eu/vocab/sideEffect_isRelatedTo_dse
 <http://covid-19.tib.eu/vocab/sideEffect_isRelatedTo_dse> rdf:type owl:ObjectProperty ;
-                                                          rdfs:domain <http://covid-19.tib.eu/vocab/DrugSideEffectInteraction> ;
+                                                          rdfs:domain <http://covid-19.tib.eu/vocab/Phenotype> ;
                                                           rdfs:range <http://covid-19.tib.eu/vocab/DrugSideEffect> ;
                                                           <http://purl.org/dc/terms/creator> <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/> ;
                                                           <http://purl.org/dc/terms/modified> "2020-07-24"@en ;
@@ -622,7 +622,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://covid-19.tib.eu/vocab/proteinID
 <http://covid-19.tib.eu/vocab/proteinID> rdf:type owl:DatatypeProperty ;
-                                         rdfs:domain <http://covid-19.tib.eu/vocab/Protein> ;
                                          rdfs:range rdfs:Literal ;
                                          <http://purl.org/dc/terms/creator> <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/> ;
                                          <http://purl.org/dc/terms/modified> "2020-07-24"@en ;
@@ -632,7 +631,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://covid-19.tib.eu/vocab/proteinLabel
 <http://covid-19.tib.eu/vocab/proteinLabel> rdf:type owl:DatatypeProperty ;
-                                            rdfs:domain <http://covid-19.tib.eu/vocab/Protein> ;
                                             rdfs:range rdfs:Literal ;
                                             <http://purl.org/dc/terms/creator> <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/> ;
                                             <http://purl.org/dc/terms/modified> "2020-07-24"@en ;
@@ -890,15 +888,6 @@ xsd:date rdf:type rdfs:Datatype .
                                        owl:versionInfo "v1.0"@en .
 
 
-###  http://covid-19.tib.eu/vocab/Condition
-<http://covid-19.tib.eu/vocab/Condition> rdf:type owl:Class ;
-                                         rdfs:subClassOf <http://covid-19.tib.eu/vocab/Disorder> ;
-                                         rdfs:comment "This class represents conditions or diseases"@en ;
-                                         rdfs:isDefinedBy "emetis_niazmand"@en ;
-                                         rdfs:label "Condition"@en ;
-                                         owl:versionInfo "v1.0"@en .
-
-
 ###  http://covid-19.tib.eu/vocab/DISRUPTS
 <http://covid-19.tib.eu/vocab/DISRUPTS> rdf:type owl:Class ;
                                         rdfs:subClassOf <http://covid-19.tib.eu/vocab/Relation> ;
@@ -1112,15 +1101,6 @@ xsd:date rdf:type rdfs:Datatype .
                                          <http://purl.org/dc/terms/modified> "2020-01-30"@en ;
                                          rdfs:comment "The set of observable characteristics of an individual resulting from the interaction of its genotype with the environment. This class include side effects that result from different drugs."@en ;
                                          rdfs:label "Phenotype"@en .
-
-
-###  http://covid-19.tib.eu/vocab/Protein
-<http://covid-19.tib.eu/vocab/Protein> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://covid-19.tib.eu/vocab/Concept> ;
-                                       <http://purl.org/dc/terms/creator> <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/> ;
-                                       <http://purl.org/dc/terms/modified> "2020-07-24"@en ;
-                                       rdfs:comment "Represents large biomolecules, or macromolecules, consisting of one or more long chains of amino acid residues."@en ;
-                                       rdfs:label "Protein"@en .
 
 
 ###  http://covid-19.tib.eu/vocab/Publication
