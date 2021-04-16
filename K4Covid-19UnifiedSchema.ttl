@@ -114,16 +114,6 @@ xsd:date rdf:type rdfs:Datatype .
                                                        rdfs:label "enzyme_isRelatedTo_gene"@en .
 
 
-###  http://covid-19.tib.eu/vocab/hasAnnotation
-<http://covid-19.tib.eu/vocab/hasAnnotation> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <http://covid-19.tib.eu/vocab/Relation> ;
-                                             rdfs:range <http://covid-19.tib.eu/vocab/Annotation> ;
-                                             <http://purl.org/dc/terms/creator> <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/> ;
-                                             <http://purl.org/dc/terms/modified> "2019-01-30"@en ;
-                                             rdfs:comment "Connection between the annotation and the relation between annotation and publication"@en ;
-                                             rdfs:label "hasAnnotation"@en .
-
-
 ###  http://covid-19.tib.eu/vocab/hasCUIAnnotation
 <http://covid-19.tib.eu/vocab/hasCUIAnnotation> rdf:type owl:ObjectProperty ;
                                                 rdfs:domain <http://covid-19.tib.eu/vocab/Concept> ;
@@ -273,7 +263,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://covid-19.tib.eu/vocab/relation_hasObject_annotation
 <http://covid-19.tib.eu/vocab/relation_hasObject_annotation> rdf:type owl:ObjectProperty ;
                                                              rdfs:domain <http://covid-19.tib.eu/vocab/Relation> ;
-                                                             rdfs:range <http://covid-19.tib.eu/vocab/Annotation> ;
+                                                             rdfs:range <http://covid-19.tib.eu/vocab/SemanticAnnotation> ;
                                                              <http://purl.org/dc/terms/modified> "2021-04-13T00:00:00"@en ;
                                                              rdfs:isDefinedBy "anery-patel"@en ;
                                                              rdfs:label "relation_hasObject_annotation"@en .
@@ -291,7 +281,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://covid-19.tib.eu/vocab/relation_hasSubject_annotation
 <http://covid-19.tib.eu/vocab/relation_hasSubject_annotation> rdf:type owl:ObjectProperty ;
                                                               rdfs:domain <http://covid-19.tib.eu/vocab/Relation> ;
-                                                              rdfs:range <http://covid-19.tib.eu/vocab/Annotation> ;
+                                                              rdfs:range <http://covid-19.tib.eu/vocab/SemanticAnnotation> ;
                                                               <http://purl.org/dc/terms/modified> "2021-04-13T00:00:00"^^xsd:dateTime ;
                                                               rdfs:isDefinedBy "anery-patel"@en ;
                                                               rdfs:label "relation_hasSubject_annotation"@en .
