@@ -55,7 +55,7 @@
 		];
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:effect;
+		rr:predicate covid-19:impact;
 		rr:objectMap [
 			rml:reference "Impact";
 		];
@@ -112,7 +112,7 @@
 		];
 	];
 	rr:predicateObjectMap [
-		rr:predicate covid-19:effect;
+		rr:predicate covid-19:impact;
 		rr:objectMap [
 			rml:reference "Impact";
 		];
