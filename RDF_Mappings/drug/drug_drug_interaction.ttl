@@ -51,7 +51,13 @@
 	rr:predicateObjectMap [
 		rr:predicate covid-19:effect;
 		rr:objectMap [
-  			rr:parentTriplesMap <#AdverseEvent>;
+  			rr:template "http://covid-19.tib.eu/Annotation/{CUI_AdverseEvent}";;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate covid-19:effect;
+		rr:objectMap [
+			rml:reference "Impact";
 		];
 	];
 	rr:predicateObjectMap [
@@ -102,7 +108,13 @@
 	rr:predicateObjectMap [
 		rr:predicate covid-19:effect;
 		rr:objectMap [
-			rr:parentTriplesMap <#AdverseEvent>;
+			rr:template "http://covid-19.tib.eu/Annotation/{CUI_AdverseEvent}";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate covid-19:effect;
+		rr:objectMap [
+			rml:reference "Impact";
 		];
 	];
 	rr:predicateObjectMap [
