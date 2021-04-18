@@ -26,25 +26,25 @@
 	rr:predicateObjectMap [
 		rr:predicate covid-19:relation_hasSubject_annotation;
 		rr:objectMap [ 
-			rr:parentTripleMap <SemanticSubjectAnnotation> 	
+			rr:parentTriplesMap <SemanticSubjectAnnotation> 	
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate covid-19:relation_hasObject_annotation;
 		rr:objectMap [ 
-			rr:parentTripleMap <SemanticObjectAnnotation> 	
+			rr:parentTriplesMap <SemanticObjectAnnotation> 	
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate covid-19:relation_hasSubjectGene_annotation;
 		rr:objectMap [ 
-			rr:parentTripleMap <GeneSubjectAnnotation> 	
+			rr:parentTriplesMap <GeneSubjectAnnotation> 	
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate covid-19:relation_hasObjectGene_annotation;
 		rr:objectMap [ 
-			rr:parentTripleMap <GeneObjectAnnotation> 	
+			rr:parentTriplesMap <GeneObjectAnnotation> 	
 		]
 	];
 	rr:predicateObjectMap [

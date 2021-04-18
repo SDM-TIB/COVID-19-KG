@@ -15,6 +15,7 @@
 						];
 	rr:subjectMap [
 		rr:template "http://covid-19.tib.eu/Drug/{DrugBankID}";
+		rr:class covid-19:Drug
 	];
 	rr:predicateObjectMap [
 		rr:predicate covid-19:hasCUIAnnotation;

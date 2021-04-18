@@ -35,7 +35,8 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://covid-19.tib.eu/Drug/{drug_id}"
+		rr:template "http://covid-19.tib.eu/Drug/{drug_id}";
+		rr:class covid-19:Drug
 	];
 	rr:predicateObjectMap [
 		rr:predicate covid-19:drug_isRelatedTo_dse;
@@ -49,7 +50,8 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://covid-19.tib.eu/Phenotype/{toxicity_Label}"
+		rr:template "http://covid-19.tib.eu/Phenotype/{toxicity_Label}";
+		rr:class covid-19:Phenotype
 	];
 	rr:predicateObjectMap [
 		rr:predicate covid-19:sideEffect_isRelatedTo_dse;
