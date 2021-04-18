@@ -20,27 +20,6 @@
 	rr:predicateObjectMap [
 		rr:predicate covid-19:hasCUIAnnotation;
 		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].
-
-<Annotation>
-	rml:logicalSource [ rml:source "/data/drug/CUI_DrugBank.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://covid-19.tib.eu/Annotation/{CUI_ID}";
-		rr:class covid-19:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate covid-19:annID;
-		rr:objectMap [ 
-			rml:reference "CUI_ID" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:hadPrimarySource;
-		rr:objectMap [
-			rr:template "http://covid-19.tib.eu/SourceName/UMLS"
+			rr:template "http://covid-19.tib.eu/Annotation/{CUI_ID}";
 		]
 	].
